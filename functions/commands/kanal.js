@@ -14,10 +14,10 @@ function kanalCommand(ctx) {
             });
             const searchResults = fuse.search(args);
             if (searchResults.length) {
-                ctx.reply(
+                ctx.replyWithMarkdown(
                     `Sonuçlar:
                         \n${searchResults
-                            .map(e => `${e.name}: ${e.link}\n`)
+                            .map(e => `[${e.name}](${e.link})\n`)
                             .join("")}`
                 );
             } else {
